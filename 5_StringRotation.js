@@ -13,11 +13,11 @@ function convertToArray(stringToConvert){
 }
 
 function convertToString(arrayToConvert){
-    let finalString = "";
+    let convertArrayToString = "";
     for(let i=0;i<arrayToConvert.length;i++){
-        finalString += arrayToConvert[i];
+        convertArrayToString += arrayToConvert[i];
     }
-    return finalString;
+    return convertArrayToString;
 }
 
 function reverseArray(arrayToReverse, startIndex, endIndex){
@@ -33,11 +33,13 @@ function reverseArray(arrayToReverse, startIndex, endIndex){
     }
 }
 
-function rotateString(stringToRotate, rotateCount){
+function rotateString(stringToRotate, rotateCountOriginal){
+
+    const lengthOfString = stringToRotate.length;
+    const rotateCount = rotateCountOriginal % lengthOfString;
 
     if(typeof rotateCount !== "number" || typeof stringToRotate !== "string") displayError();
 
-    const lengthOfString = stringToRotate.length;
     let orientation = (rotateCount<0) ? "left" : "right"; 
     let stringArray = convertToArray(stringToRotate);
 
@@ -56,5 +58,5 @@ function rotateString(stringToRotate, rotateCount){
 }
 
 
-console.log(rotateString("12345",0));
+console.log(rotateString("12345",-7));
 

@@ -11,7 +11,7 @@ function countStrings(stringArray){
 
     for(let stringValue of stringArray){
         
-        if(typeof stringValue !== "string") continue;
+        if(typeof stringValue !== "string" || stringValue === "") continue;
         stringValue = stringValue.toLowerCase();
         if(stringFrequency[stringValue]) stringFrequency[stringValue]++;
         else stringFrequency[stringValue] = 1;
@@ -19,4 +19,4 @@ function countStrings(stringArray){
     return stringFrequency;
 }
 
-console.log(countStrings(["a", "b", true,"a", "c", "b", "A"]));
+console.log(countStrings(["a", "b", true,"a", "c", "b", "A",""]));

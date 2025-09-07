@@ -3,6 +3,16 @@ function displayError(){
     return null;
 }
 
+function pushElementsToArray(oneDArray, jaggedArray){
+    if(!Array.isArray(jaggedArray)) {
+        oneDArray.push(jaggedArray);
+        return;
+    }
+    for(let values of jaggedArray){
+        pushElementsToArray(oneDArray,values);
+    }
+}
+
 function flatten2DArray(inputArray){
 
     if(!Array.isArray(inputArray)) return displayError();
@@ -12,14 +22,11 @@ function flatten2DArray(inputArray){
     
     for(let i=0;i<lengthOfInputArray;i++){
         const currentValue = inputArray[i];
-        if(Array.isArray(currentValue)){
-            for(let j=0;j<currentValue.length;j++){
-                oneDArray.push(currentValue[j]);
-            }
-        } else oneDArray.push(currentValue);
+        if(Array.isArray(currentValue)) pushElementsToArray(oneDArray, currentValue);
+        else oneDArray.push(currentValue);
     }
     return oneDArray;
 }
 
-console.log(flatten2DArray([1,2,[3,4],[5,6]]));
+console.log(flatten2DArray([1,2,[3,[4,5],6],[7,8],9]));
 

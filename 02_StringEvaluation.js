@@ -36,8 +36,6 @@ function convertExpressionToArray(inputString){
             isAdding = true;
             if(isFloat){
                 currentChar /= divider;
-                console.log(currentChar);
-                
                 tempDigit += currentChar;
                 divider *= 10;
             }
@@ -123,6 +121,7 @@ function evaluateString(inputString){
 
 
 console.log(evaluateString("2*(5*(3+6))/15-2"));
+
 
 
 

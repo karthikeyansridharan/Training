@@ -115,12 +115,15 @@ function evaluateString(inputString){
         performEvaluation(operandStack,operatorStack);
     }
 
+    if(operandStack.length === 0) return displayError();
+    
     return operandStack[operandStack.length-1];
 }
 
 
 
 console.log(evaluateString("2*(5*(3+6))/15-2"));
+
 
 
 

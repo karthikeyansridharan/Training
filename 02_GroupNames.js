@@ -16,8 +16,8 @@ function groupNamesWithFirstChar(inputArray){
     let groupedArray = [];
     for(let names of inputArray){
         if(typeof names !== "string") continue;
-        const firsrChar = names.charAt(0).toLowerCase();
         names = names.toLowerCase();
+        const firsrChar = names.charAt(0);
         if(!groupedNames[firsrChar]) groupedNames[firsrChar] = [names];
         else {
             if(!isExists(groupedNames[firsrChar],names)) groupedNames[firsrChar].push(names);
@@ -28,3 +28,4 @@ function groupNamesWithFirstChar(inputArray){
 }
 
 console.log(groupNamesWithFirstChar(["Arun","Arun","123",null,"balu","blue","cathy", "krish","arun", "aadhir", "aariketh", "kamal"]));
+

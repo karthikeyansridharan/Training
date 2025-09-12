@@ -4,7 +4,9 @@ function displayError(){
 }
 
 function isExists(inputArray,valueToCheck){
-    for(let values of inputArray) if(values===valueToCheck) return true;
+    for(let values of inputArray){
+        if(values===valueToCheck) return true;
+    } 
     return false;
 }
 
@@ -92,5 +94,6 @@ const students = [
 
 const {groupedObject,finalInterestArray} = findCommonInterest(students);
 console.log(groupedObject,"\n",finalInterestArray);
+
 
 

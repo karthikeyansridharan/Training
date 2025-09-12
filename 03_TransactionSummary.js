@@ -4,11 +4,11 @@ function summarizeTransactions(transactionArray){
       console.error("Error: Invalid input");
       return null;
     }
-    let set = new Set(transactionArray.map(val=>val["userId"]));
+    let uniqueUserId = new Set(transactionArray.map(val=>val["userId"]));
   
     let finalTransaction = [];
 
-    for(let ids of set){
+    for(let ids of uniqueUserId){
       let tempObject = {};
       let key = ids;
       let totalAmount = 0;
@@ -16,15 +16,15 @@ function summarizeTransactions(transactionArray){
       let count = 0;
       let currency = "";
       let transactionTime = "";
-      for(let objects of transactionArray){
-          if(ids === objects["userId"]){
+      for(let transactionItem of transactionArray){
+          if(ids === transactionItem["userId"]){
               tempObject["key"] = ids;
-              totalAmount += (typeof objects["amount"]==="number") ? objects["amount"] : 0;
-              if(!byCategory[`${objects["category"]}`]) byCategory[`${objects["category"]}`] = objects["amount"];
-              else byCategory[`${objects["category"]}`] += objects["amount"];
+              totalAmount += (typeof transactionItem["amount"]==="number") ? transactionItem["amount"] : 0;
+              if(!byCategory[`${transactionItem["category"]}`]) byCategory[`${transactionItem["category"]}`] = transactionItem["amount"];
+              else byCategory[`${transactionItem["category"]}`] += transactionItem["amount"];
               count++;
-              currency = (typeof objects["currency"]==="string") ? objects["currency"] : "";
-              transactionTime = (objects["ts"]>transactionTime) ? objects["ts"] : transactionTime;
+              currency = (typeof transactionItem["currency"]==="string") ? transactionItem["currency"] : "";
+              transactionTime = (transactionItem["ts"]>transactionTime) ? transactionItem["ts"] : transactionTime;
           }
       } 
       tempObject["totalAmount"] = totalAmount;

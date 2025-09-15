@@ -2,6 +2,7 @@ import { todos, processData } from "./details.js";
 
 function sortByPriority(todos,processData){
 
+    processData();
     const priorityMapValue = {
         "high" : 3,
         "medium" : 2,
@@ -28,10 +29,14 @@ function sortByPriority(todos,processData){
     const priorityOfA = priorityMapValue[a.priority] || 0;
     const priorityOfB = priorityMapValue[b.priority] || 0;
     return priorityOfB - priorityOfA; 
-  });
+    });
 
-  console.log(tempTodo);
+    const idArray = tempTodo.map((tasks)=>{
+        return tasks["id"];
+    });
+
+    return idArray;
   
 }
 
-console.log(sortByPriority(todos),processData);
+console.log(sortByPriority(todos,processData));

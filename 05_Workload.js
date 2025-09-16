@@ -10,7 +10,7 @@ function calculateWorkload(people,todos,processData){
     }
     
     for(let person of workload){
-        if(person["person"] !== "UnAssigned"){
+        if(person["person"] !== "Unassigned"){
             const nameOfPerson = person["person"];
             const workingHrs = person["hrs"];
             const capacityOfPerson = mapOfPeople[person["person"]];
@@ -23,3 +23,4 @@ function calculateWorkload(people,todos,processData){
 }
 
 console.log(calculateWorkload(people,todos,processData));
+

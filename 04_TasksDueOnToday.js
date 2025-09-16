@@ -16,7 +16,8 @@ function fetchTasks(people, todos, processData){
             return (taskDue<=todaysDate && tasks["status"] !== "done");
         }
         return false;
-    }).map((task)=>{
+    });
+    taskOnDue.map((task)=>{
         return {"id":task["id"],"title":task["title"],"assineeName":peopleObject[task["assigneeId"]],"due":task["due"]};
     });
 
@@ -25,3 +26,4 @@ function fetchTasks(people, todos, processData){
 }
 
 console.log(fetchTasks(people,todos,processData));
+

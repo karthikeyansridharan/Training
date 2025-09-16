@@ -33,7 +33,7 @@ export function calculateEstimatedHours(people,todos,processData){
         } 
     }
     if(isContainsUnassigned){
-        timeEstimationForUnassigned["person"] = "UnAssigned";
+        timeEstimationForUnassigned["person"] = "Unassigned";
         timeEstimationForUnassigned["hrs"] = nullHrs;
         timeEstimation.push(timeEstimationForUnassigned);
     }
@@ -41,3 +41,4 @@ export function calculateEstimatedHours(people,todos,processData){
 }
 
 console.log(calculateEstimatedHours(people,todos,processData));
+

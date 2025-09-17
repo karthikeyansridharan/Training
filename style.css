@@ -1,0 +1,156 @@
+body{
+    background-color: #37353E;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+#resume-content{
+    background-color:#D3DAD9;
+    height: 100%;
+    width: 1000px;
+    margin: 0 auto 0 auto;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+h4{
+    color:#44444E;
+}
+
+hr{
+    margin-top:10;
+    margin-bottom: 30px;
+    border: 1px solid #44444E;
+}
+
+#nav-container{
+    display: flex;
+    width: 100%;
+    justify-content:space-evenly;
+    border-radius: 5px;
+    margin-top: 50px;
+    background-color: #37353E;
+    color: white;
+}
+
+.nav-items{
+    padding: 10px;
+    color: white;
+}
+
+.nav-items a{
+    padding: 10px;
+    color: white;
+}
+
+header{
+    text-align: center;
+    position: relative;
+}
+
+.sub-heading{
+    margin-bottom: 0;
+    color: black;
+}
+
+.section{
+    margin-bottom: 40px;
+}
+
+p{
+    text-align: justify;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    max-width: 1000px;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    width: 50%;
+    border: 1px solid #44444E;
+}
+
+td{
+    border: 2px solid #37353E;
+    padding: 10px;
+}
+
+#project-list>li{
+    list-style: none;
+}
+
+.project-info li{
+    list-style:disc;
+}
+
+.education-timeline{
+    float: right;
+    margin-top: 0;
+}
+
+.institution-name{
+    margin-top: 0;
+}
+
+#education-section ul{
+    line-height: 0.8;
+    list-style: none;
+}
+
+#education-section li{
+    margin-top: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+#profile{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid #44444E;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+form input{
+    height: 30px;
+    border-radius: 8px;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+button{
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+}
+
+footer{
+    text-align: center;
+    margin-bottom: 20px;
+}

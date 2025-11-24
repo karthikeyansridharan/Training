@@ -1,0 +1,42 @@
+@import  "tailwindcss";
+
+/* *{
+    @apply p-0 m-0 box-border;
+} */
+
+body{
+    @apply text-white font-mulish;
+}
+
+@theme{
+    --font-mulish : "Mulish", sans-serif;
+    --color-socal-light-blue : #3281F7;
+    --color-socal-light-grey : #B6B6B6;
+}
+
+footer{
+    @apply text-xs;
+}
+ 
+footer button:hover {
+  @apply border-b border-b-white border-solid;    /* ask !!!!!! */
+  
+}
+
+@keyframes slideSide{
+    0%{
+        transform:translateX(-100%)
+    }
+    100%{
+        transform:translateX(0)
+    }
+}
+
+.animate-SlideSide{
+    animation: slideSide 0.2s ease-in-out;
+}
+
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
